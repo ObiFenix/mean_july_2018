@@ -49,7 +49,7 @@ HttpClientModule // imports
 
 Add to `name_of_service.service.ts`
 ```javascript
-import HttpClient from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 constructor(private _http: HttpClient) {} // Set up private attribute to use HttpClient. Added to Name_of_serviceService class.
 ```
 
