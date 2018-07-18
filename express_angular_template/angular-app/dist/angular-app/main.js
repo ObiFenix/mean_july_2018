@@ -65,7 +65,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'wassup';
+        this.title = 'app';
     }
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -185,7 +185,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/joshreese/Documents/dojo/mean/express/express_angular_template/angular-app/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/joshreese/Documents/dojo/mean/mean_july_2018/express_angular_template/angular-app/src/main.ts */"./src/main.ts");
 
 
 /***/ })
