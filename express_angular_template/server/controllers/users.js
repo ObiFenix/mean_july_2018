@@ -7,7 +7,7 @@ module.exports = {
         res.json({'err': 'Ooooopsies'});
       }
       else {
-        res.json({'users': users});
+        res.json(users);
       }
     })
   }
