@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+
+    <!-- Required CSS Files [ BOOTSTRAP 4 ] -->
+    <link rel="stylesheet" href="css/Bootstrap4.css">
+    <link rel="stylesheet" href="css/Bootstrap4.min.css">
+
+    <style>
+      .container { padding-top: 2rem; }
+      .counter   { font-size:4vw; padding:-top 2rem; margin: 0rem auto 1rem; color: #f1e7e782; }
+      .btn-head  { margin: 2rem auto; color: #fff; }
+      .push-btn  { padding: 2rem 5rem; }
+      .reset-btn { padding: .5rem 2rem; margin: 10rem 0 0 -80rem; }
+      .jumbotron {
+         padding: 0;
+         margin: 0;
+         min-height: 100vh;
+         background-size: cover;
+         background-position: center;
+         background-repeat: no-repeat;
+         background-image: url("imgs/blur-bg.jpg");
+      }
+      input#count, input#reset {letter-spacing: .2rem; }
+      .inliner { display: flex; justify-content: space-around; }
+    </style>
+</head>
+
+<body>
+  <div class="top-row row">
+    <nav class="nav navbar navbar-dark bg-dark flexed col-md-12">
+      <a class="text-light nav-link" href="/success">Welcome <span style="color:khaki"><%= req.session.username %></span></a>
+      <a class="text-light nav-link" href="/">Logout</a>
+    </nav>
+  </div>
+
+   <div class="jumbotron">
+      <div class="container">
+        <div style="text-align:center; color:black;">
+          <p  class="counter">The Button has been Pushed</p>
+          <h2 class="counter" id="counter"><span class="text-primary">0</span> Time(s)</h2>
+          <hr style="width:35%; background: #0000002e;">
+          <h3 class="btn-head">Push the Button to Update the Count!</h3>
+          <div class="container">
+            <div class="row justify-content-md-center inliner">
+                <div class="col">
+                  <form id="countform">
+                      <input type="submit" id="count" class="btn btn-lg push-btn btn-primary" value="PUSH THE EPIC BUTTON">
+                  </form>
+                </div>
+            </div>
+          </div>
+          <div class="row justify-content-md-center inliner">
+            <div class="col inliner-right">
+              <form id="resetform">
+                  <input type="submit" id="reset" class="btn reset-btn btn-danger" value="Reset Count">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+   </div>
+
+   <!-- Load Required Javascript Files -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+   <script src="js/main.js" charset="utf-8"></script>
+
+</body>
+
+</html>

@@ -101,43 +101,30 @@ app.post('/login', (req, res) => {
    });
 })
 
-
-// route for user's dashboard
+// route for user's dashboard - Success page
 app.get('/success', (req, res) => {
-   User.find({}, (err, data) => { res.render('Success', { req:req, allusers: data }); })
+   //    if (req.sssion.uid /*  && req.cookies.user_sid */) { res.render('Success'); }
+   //    else                                          { res.redirect('/loginform'); }
+   User.find({}, (err, data) => { res.render('Success', { req:req, allusers: data }); });
 });
-// app.get('/success', (req, res) => {
-//    if (req.session.uid /*  && req.cookies.user_sid */) { res.render('Success'); }
-//    else                                          { res.redirect('/loginform'); }
-// });
 
-// route for user logout
-// app.get('/logout', (req, res) => {
-//    if (req.session.uid /*  && req.cookies.user_sid */) { res.clearCookie('user_sid');  res.redirect('/'); } 
-//    else                                          { res.redirect('/loginform'); }
-// });
+// Logs the user out and earase the user session... 
+// I am still waiting for the next food to drop...
+// other users applyig this approach have experienced some issues... so far so good!
+app.get('/logout', (req, res) => {
+   //    if (req.session.uid /*  && req.cookies.user_sid */) { res.clearCookie('user_sid');  res.redirect('/'); } 
+   //    else                                          { res.redirect('/loginform'); }
+   req.session.destroy( (err) => { 
+      if (err) { console.log(err); }  
+      else     { res.redirect('/loginform'); }  
+   });
+});
 
 // route for handling 404 requests(unavailable routes)
 app.use(function (req, res, next) {
    res.status(404).send("HTTP 404 ERROR: Sorry can't find that page!")
-})
-
-app.get('/logout', (req, res) => {
-   req.session.uid = "";
-   // req.session.flash;
-	res.render('Register');
 });
 
 // Clients connection port settings
-// const port = process.env.PORT || 3000;
-// app.listen(port, () => `App running in localhost at port ${port}...`);
 app.set('port', 8000);
 app.listen(app.get('port'), () => console.log(`App started on port ${app.get('port')}`));
-
-// ==================
-// Required Functions 
-// ==================
-var sessionChecker = (req, res, next) => {       // middleware function to check for logged-in users
-   if (req.session.user && req.cookies.user_sid) { res.redirect('/success'); }
-   else                                          { next(); }
-};

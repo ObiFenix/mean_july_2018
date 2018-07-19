@@ -1,7 +1,7 @@
 {
   "name": "loginregistration",
   "version": "1.0.0",
-  "description": "Single Page Application - \"Login & Registration\"",
+  "description": "Single Page Application - \"Login & Registration + Counter IO\"",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,6 +11,7 @@
   "author": "ObiFenix",
   "license": "ISC",
   "dependencies": {
+    "socket.io": "^2.1.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",

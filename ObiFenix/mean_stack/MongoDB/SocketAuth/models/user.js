@@ -1,8 +1,5 @@
-const mongoose = require('mongoose');
-const validate = require('mongoose-validator');
-const bcrypt   = require('bcryptjs');
-
-mongoose.connect('mongodb://localhost/login_reg_db');
+const   mongoose = require('mongoose');
+        // validate = require('mongoose-validator');
 
 let Schema = mongoose.Schema;
 
@@ -11,13 +8,13 @@ let UserSchema = new mongoose.Schema({
         type: String, 
         required: [true, "First name is required."], 
         minlength: [2, "First name is too short."], 
-        maxlength: [20, "First name is too long."]},
+        maxlength: [25, "First name is too long."]},
 
     last_name: {
         type: String, 
         required: [true, "Last name is required."], 
-        minlength: [2, "Last name is too short."], 
-        maxlength: [20, "Last name is too long."]},
+        minlength: [2, "Last name ispii too short."], 
+        maxlength: [25, "Last name is too long."]},
 
     email: {
         type: String, 
@@ -44,8 +41,11 @@ let UserSchema = new mongoose.Schema({
                 else                      { return true; }},
             message: "Cannot have a birthday in the future."
         }}
-    }, {timestamps: true});
+    }, { timestamps: true });
 
+
+// Connectind to mongo db
+mongoose.connect('mongodb://localhost/users_db');
 mongoose.model('User', UserSchema);
 let User = mongoose.model('User');
 
