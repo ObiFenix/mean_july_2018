@@ -45,7 +45,7 @@ import { Name_of_serviceService } from './name_of_service.service';
 Name_of_serviceService // add to providers array.
 ```
 Add HttpClientModule to `app/app.module.ts` to allow for Http requests:
-```
+```javascript
 import { HttpClientModule } from '@angular/common/http';
 HttpClientModule // add to imports array
 ```
