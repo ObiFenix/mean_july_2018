@@ -2,20 +2,21 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>QuotingDojo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
 
-   <!-- Required CSS Files [ BOOTSTRAP 4 ] -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-   <link rel="stylesheet" href="css/btmin.css.css">
+    <!-- Required CSS Files [ BOOTSTRAP 4 ] -->
+    <link rel="stylesheet" href="css/Bootstrap4.css">
+    <link rel="stylesheet" href="css/Bootstrap4.min.css">
+    <link rel="stylesheet" href="css/btmin.css.css">
 
-   <style>
+    <style>
       .counter   { font-size:6vw; margin: 0rem auto 1rem; color: #f1e7e782; }
-      .color-btn { font-size: 12px; width: 20rem; padding: 2rem 0; margin-top: 50vh; }
-      .color-btn:hover { background-color: #afa4bfb5; color: #f5f5f5; }
+      .btn-head  { margin: 2rem auto; color: #fff; }
+      .push-btn  { padding: 2rem 5rem; }
+      .reset-btn { padding: .5rem 2rem; }
       .jumbotron {
          padding: 0;
          margin: 0;
@@ -23,7 +24,6 @@
          background-size: cover;
          background-position: center;
          background-repeat: no-repeat;
-         background-color: transparent;
          background-image: url("imgs/blur-bg.jpg");
       }
       input#count, input#reset {letter-spacing: .2rem; }
@@ -31,7 +31,7 @@
     </style>
 </head>
 
-<body class="body-bg">
+<body>
    <div class="jumbotron">
       <div class="container">
          <%- body %>
@@ -42,6 +42,7 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
    <script src="js/main.js" charset="utf-8"></script>
+
 </body>
 
 </html>

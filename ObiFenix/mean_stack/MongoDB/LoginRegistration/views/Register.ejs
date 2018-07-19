@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Registrer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Required CSS Files [ BOOTSTRAP 4 ] -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <style media="screen">
+      .nav a          { padding: 0.2rem 2rem; font-size: 16px !important; }
+      .body-bg        { background-color: #000; color: #f5f5f5; font-size: 12px; }
+      .register       { border-radius: .5rem; padding: 2rem; transition: all 2s ease-in-out; }
+      .msg            { max-width: 950px; margin-top: 0rem; padding:  0 2rem; }
+      .noMsg          { max-width: 950px; margin-top: 8rem; padding: 0 2rem; }
+      .register:hover { box-shadow: 1px 0 1px 1px #999; transition: all .3s ease-in-out; }
+    </style>
+  </head>
+
+  <body class="body-bg">
+    <!-- Navbar -->
+    <div class="top-row row">
+      <nav class="nav navbar navbar-dark bg-dark justify-content-end col-md-12">
+        <a class="text-light nav-link" href="/loginform">Login</a>
+      </nav>
+    </div>
+    <!-- Display Erros if Any -->
+    <% if(typeof(errors) != 'undefined' ) { %>
+      <div class="container offset-4">
+        <div class="row">
+          <ul class="register col-md-7">
+            <% for (var err in errors) { %>
+              <li><h6 class="text-primary"><%= errors[err].message %></h6></li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+
+    <!-- Main Container -->
+    <div class="container msg offset-4">
+    <% } else {%>
+    <div class="container noMsg offset-4">
+    <% } %>
+    
+      <div class="row">
+        <div class="register col-md-7">
+          <form action="/register" method="POST">
+            <h1 class="text-muted mb-5">Registration</h1>
+            <div class="form-group form-row">
+              <label class="col-3">First Name: </label>
+              <input class="col-9" type="text" class="form-control" name="first_name" value="Matt">
+            </div>
+            <div class="form-group form-row">
+              <label class="col-3">Last Name: </label>
+              <input class="col-9" type="text" class="form-control" name="last_name" value="Tucker">
+
+            </div>
+            <div class="form-group form-row">
+              <label class="col-3">Email: </label>
+              <input class="col-9" type="text" class="form-control" name="email" value="m_tucker@sensei.dojo">
+            </div>
+            <div class="form-group form-row">
+              <label class="col-3">Birthday: </label>
+              <input class="col-9" type="date" class="form-control" name="birthday" value="">
+            </div>
+            <div class="form-group form-row">
+                <label class="col-3">Password: </label>
+                <input class="col-9" type="password" id="password" class="form-control" name="password" value="12C34D56">
+              </div>
+            <div class="form-group form-row">
+              <label class="col-3">Confirm Password: </label>
+              <input class="col-9" type="password" id="confirm_pwd" class="form-control" name="confirm_pwd" value="12C34D56">
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

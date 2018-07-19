@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Edit Horse</title>
+
+   <!-- Required CSS Files [ BOOTSTRAP 4 ] -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+   <style media="screen">
+      .nav a { padding: 0.6rem 2rem; }
+      .nav-link { margin-left: -1rem; }
+      .btn-sm { width: 16rem; padding: 1rem 0; }
+      .btn-edit { color: #fff !important; background-color: #deb887; border: #deb887; }
+      .body-bg { background-color: #e9ecef; }
+   </style>
+</head>
+
+<body class="body-bg">
+   <!-- Navbar -->
+   <div class="top-row row">
+      <nav class="nav navbar navbar-dark bg-dark justify-content-end col-md-12">
+         <a class="text-light nav-link" href="/">Home</a>
+         <a class="text-light nav-link" href="/mongooses/new">Add a New Horse</a>
+      </nav>
+   </div>
+
+   <div class="jumbotron">
+      <div class="container">
+         <div class ="row">
+            <h1 class="justify-content-center mb-5" style="color:#b37f3cd4">Horses Profile</h1>
+         </div>
+         <div class="row">
+            <div class ="col-6 mt-8">
+               <hr style="margin-bottom:0;">
+               <h4><a class="nav-link" href="/mongooses/<%=horse._id%>"><span class="text-muted">Breed:</span> <%= horse.breed %></a></h4>
+               <p><span class="text-muted">Horse Name:</span> <%= horse.name %></p>
+               <p><span class="text-muted">Description:</span> <%= horse.desc %></p>
+               <p><span class="text-muted">Quantity:</span> <%= horse.qty %></p>
+               <p><span class="text-muted">Created at:</span> <%= horse.createdAt %></p>
+               <p class="col-xs-5">
+                  <a class="col-xs-2 btn btn-warning btn-sm btn-edit" href="/mongooses/edit/<%=horse._id%>">Edit</a>
+                  <a class="col-xs-2 btn btn-danger btn-sm" href="/mongooses/destroy/<%=horse._id%>">Delete</a>
+               </p>
+               <hr>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- Load Required Javascript Files -->
+   <script src="js/B4M.js" charset="utf-8"></script>
+   <script src="js/main.js" charset="utf-8"></script>
+</body>
+
+</html>

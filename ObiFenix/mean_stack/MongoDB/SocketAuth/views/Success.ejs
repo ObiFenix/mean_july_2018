@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Success</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Required CSS Files [ BOOTSTRAP 4 ] -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+   <style media="screen">
+      .heading { margin: 4rem 0; text-align: center; }
+      .nav a   { padding: 0.6rem 2rem; }
+      .body-bg { background-color: #4b636fb3; }
+      .flexed  { display: flex; justify-content: space-between; }
+    </style>
+   </style>
+</head>
+
+<body class="body-bg">
+  <!-- Navbar -->
+  <div class="top-row row">
+      <nav class="nav navbar navbar-dark bg-dark flexed col-md-12">
+        <a class="text-light nav-link" href="/success">Welcome <%= this_user.first_name %></a>
+        <a class="text-light nav-link" href="/">Logout</a>
+      </nav>
+  </div>
+    <div class="container">
+        <h1 class="text-light heading">You have successfuly loged in!</h1>
+        <div class="row justify-content-center">
+           <div clas="col-sm-5">
+               <ul><h3>Here are all the Current Users</h3><hr>
+                  <% if (allusers) {%> <% for user of allusers {%>
+                  <li class="text-light flexed"><p><label for="name"><span class="text-dark">Name: </span></label></p><p><%= user.first_name %> <%= user.last_name %></p></li>
+                  <li class="text-light flexed"><p><span class="text-dark">Email:</span></p><p><%= user.email %></p></li>
+                  <li class="text-light flexed"><p><span class="text-dark">Created At:</span></p><p><%= user.created_at %></p></li>
+                  <% } else {%> 
+                  <li class="text-light flexed"><p><span class="text-dark">There are currently no users in the database!</span></p><p><%= user.created_at %></p></li>
+                  <% } %><% } %>
+               </ul>
+           </div>
+        </div>
+    </div>
+</body>
+</html>
