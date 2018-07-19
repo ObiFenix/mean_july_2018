@@ -39,12 +39,15 @@ From Angular app directory:
 ```bash
 ng g s name_of_service
 ```
-Add to `app/app.module.ts`
+Add service to `app/app.module.ts`
 ```javascript
-import { HttpClientModule } from '@angular/common/http';
 import { Name_of_serviceService } from './name_of_service.service';
-Name_of_serviceService // providers array.
-HttpClientModule // imports
+Name_of_serviceService // add to providers array.
+```
+Add HttpClientModule to `app/app.module.ts` to allow for Http requests:
+```
+import { HttpClientModule } from '@angular/common/http';
+HttpClientModule // add to imports array
 ```
 
 Add to `name_of_service.service.ts`
