@@ -44,11 +44,17 @@ Add service to `app/app.module.ts`
 import { Name_of_serviceService } from './name_of_service.service';
 Name_of_serviceService // add to providers array.
 ```
-Add HttpClientModule to `app/app.module.ts` to allow for Http requests:
+Add `HttpClientModule` to `app/app.module.ts` to allow for Http requests:
 ```javascript
 import { HttpClientModule } from '@angular/common/http';
 HttpClientModule // add to imports array
 ```
+
+Add to `app.component.ts`:
+```javascript
+import { Name_of_serviceService } from './name_of_service.service'
+constructor(private _name_of_serviceService: Name_of_serviceService) {}
+  ```
 
 Add to `name_of_service.service.ts`
 ```javascript
@@ -56,11 +62,6 @@ import { HttpClient } from '@angular/common/http';
 constructor(private _http: HttpClient) {} // Set up private attribute to use HttpClient. Added to Name_of_serviceService class.
 ```
 
-Add to `app.component.ts`:
-```javascript
-import { Name_of_serviceService } from './name_of_service.service'
-constructor(private _name_of_serviceService: Name_of_serviceService) {}
-```
 ### Create, and subscribe to, Angular Observable
 Add this method to `Name_of_serviceService` class in `name_of_service.service.ts`
 ```javascript
