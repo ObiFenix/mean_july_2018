@@ -1,0 +1,31 @@
+/* * { margin: 0; padding: 0; } */
+hr {
+    width: 25%;
+    margin: 0 auto;
+}
+.cent li {
+    text-align: center;
+    list-style: none;
+}
+.cent ul li a {
+    color: #333;
+    text-decoration: none !important;
+}
+.cent ul li:hover a {
+    color: #000;
+}
+.header {
+    text-align: center;
+    font-size: 1.5em;
+}
+.mean-header {
+    margin-top: 2rem;
+    font-size: 3em;
+    font-family: 'Fredoka One', cursive;
+}
+.mean-header span {
+    color: burlywood;
+}
+.helpful-links {
+    font-family: 'Concert One', cursive;
+}
