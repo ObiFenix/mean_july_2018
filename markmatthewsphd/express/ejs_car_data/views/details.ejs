@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+
+    <!--scripts-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="../javascripts/bootstrap.js"></script>
+
+    <!--stylesheets-->
+
+    <link rel="stylesheet" href="../stylesheets/css/fontawesome-all.css"/>
+    <link rel="stylesheet" href="../stylesheets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../stylesheets/css/style.css"/>
+    <title><%= title %></title>
+    </head>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 h1">Details page for the <%= title %></div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+            </div>
+            <div class="col-4"><img src="<%= image %>" class="img-fluid rounded-circle border border-primary"></div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-12"><h5 class="bg-info text-white">Make: <%= make %></h5></div>
+        </div>
+        <div class="row">
+            <div class="col-12"><h5 class="bg-info text-white">Year: <%= year %></h5></div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <ul class="list-unstyled">
+                    <li class="bg-info text-white h5">Details
+                        <ul>
+                            <% for (var i = 0; i < details.length; i++ ) { %>
+                            <li class="text-white h6">
+                                <%= details[i].milage %>
+                                <%= details[i].engine %>
+                                <%= details[i].transmission %>
+                            </li>
+                            <% } %>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

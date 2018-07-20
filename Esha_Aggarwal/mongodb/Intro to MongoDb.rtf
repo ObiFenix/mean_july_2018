@@ -1,0 +1,58 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww18360\viewh12220\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \CocoaLigature0 > show dbs\
+\
+1. > use my_first_db\
+\
+2. > db.createCollection('students')\
+\
+3,4. > db.students.insert(\{name:'Rachel Green', home_state:'NY', lucky_number:78, birthday:\{month:09, day:16, year: 1986\}\})\
+\
+	> db.students.insert(\{name:'Chandler Bing', home_state:'CA', lucky_number:14, birthday:\{month:05, day:05, year: 1983\}\})\
+\
+	> db.students.insert(\{name:'Ross Geller', home_state:'MA', lucky_number:27, birthday:\{month:12, day:25, year: 1987\}\})\
+\
+	> db.students.insert(\{name:'Monica Geller', home_state:'MA', lucky_number:89, birthday:\{month:11, day:12, year: 1985\}\})\
+\
+	> db.students.insert(\{name:'Pheobe Buffay', home_state:'TX', lucky_number:01, birthday:\{month:07, day:19, year: 1988\}\})\
+\
+5. > db.students.find().pretty()\
+\
+6. > db.students.find(\{home_state:'CA'\})\
+\
+7. > db.students.find(\{lucky_number:\{$gt:3\}\})\
+\
+	> db.students.find(\{lucky_number:\{$lte:10\}\})\
+\
+	> db.students.find(\{lucky_number:\{$gte:1, $lte:9\}\})\
+\
+8. > db.students.updateMany(\{\}, \{$push: \{interests: ['brunch', 'MongoDB']\}\})\
+\
+9. > db.students.update(\{_id: ObjectId('5b44d5f79fe6550fcc7b97d6')\}, \{$push: \{interests: ['sports']\}\})\
+\
+10. > db.students.update(\{name:'Rachel Green')\}, \{$push: \{interests: 'taxes'\}\})\
+\
+11. > db.students.update(\{name:'Rachel Green'\}, \{$pop: \{interests: -1\}\})\
+\
+12. > db.students.remove(\{home_state:'CA'\})\
+\
+13. > db.students.remove(\{name:'Pheobe Buffay'\})\
+\
+14. > db.students.deleteOne(\{lucky_number:\{$gt: 5\}\})\
+\
+15. > db.students.updateMany(\{\}, \{$set: \{number_of_belts: 0\}\})\
+\
+16. > db.students.updateMany(\{\}, \{$inc: \{number_of_belts: 1\}\})\
+\
+17. > db.students.updateMany(\{\}, \{$rename: \{number_of_belts: 'belts_earned'\}\})\
+\
+18. > db.students.updateMany(\{\}, \{$unset: \{belts_earned: ''\}\})\
+\
+19. > db.students.updateMany(\{\}, \{$currentDate: \{updated_on:true\}\})\
+\
+}

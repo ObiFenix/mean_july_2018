@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        let users = { // dictionary? library? list?
+            employees: [ // array
+                {'first_name':  'Miguel', 'last_name' : 'Jones'},
+                {'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+                {'first_name' : 'Nora', 'last_name' : 'Lu'},
+                {'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+            ],
+            managers: [ // array
+                {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
+                {'first_name' : 'Gordon', 'last_name' : 'Poe'}
+            ]
+        };
+        console.log('running script');
+        console.log(users.employees.length);
+        console.log(users.managers.length);
+        console.log(users.employees);
+        console.log(users.managers);
+        console.log('EMPLOYEES')
+        for (var i = 0; i < users.employees.length; i++) {
+            console.log((i+1) +' - ' + users.employees[i].last_name.toUpperCase() + ', ' + users.employees[i].first_name.toUpperCase() +' - '+(users.employees[i].first_name.length+users.employees[i].last_name.length))
+        }
+        console.log('MANAGERS')
+        for (var i = 0; i < users.managers.length; i++){
+            console.log((i+1) +' - ' + users.managers[i].last_name.toUpperCase() + ', ' + users.managers[i].first_name.toUpperCase() +' - '+(users.managers[i].first_name.length+users.managers[i].last_name.length))
+
+        }
+    </script>
+    <title>Challenge 2</title>
+</head>
+<body>
+
+</body>
+</html>

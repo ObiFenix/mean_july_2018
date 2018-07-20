@@ -17,7 +17,7 @@ app.get("/cars", function (request, response){
     {name:'rsti.jpg'},
     {name:'rx7.jpg'},
     // JOSH: I'm going to add some stuff here
-    {name:'blah blah blah'}
+    {name:'isdvhdihvldnvdln/lnc'}
     {name:'ummmmmmhmmmmmmm'}
   ]
 
@@ -29,7 +29,9 @@ app.get("/cats", function (request, response){
     {name:'space_cat.jpg'},
     {name:'high_cat.jpg'},
     {name:'space_cat2.jpg'},
-    {name:'fire_cat.jpg'}
+    {name:'fire_cat.jpg'},
+    {name:'space_cat3.jpg'},
+    {name:'fire_cat7.jpg'}
   ]
 
   response.render('cats', {files: files_name});

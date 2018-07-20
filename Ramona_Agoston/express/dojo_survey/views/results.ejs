@@ -1,0 +1,21 @@
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <title>Your Info</title>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Submitted Info</h2>
+            <p><strong>Name: </strong><%=data.full_name%></p>
+            <p><strong>Dojo Location: </strong><%=data.location%></p>
+            <p><strong>Favorite Language: </strong> <%=data.language%></p>
+            <p><strong>Comment: </strong><%=data.comment%></p>
+                <div class="form-group">
+                    <a href="/" class="btn btn-outline-dark btn-sm btn-primary">Go Back</a>
+                </div>
+        </div>
+    </body>
+</html>

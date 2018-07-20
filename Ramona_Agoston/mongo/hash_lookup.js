@@ -1,0 +1,42 @@
+var hashMap = [];
+hashMap.length = 30;  // set the capacity by defining the length of the array
+String.prototype.hashCode = function(){
+    var hash = 0;
+    if(this.length == 0){
+        return hash;
+    }
+    for(i=0; i<this.length; i++){
+        var char = this.charCodeAt(i);
+        hash = ((hash<<5)-hash) + char;// bitwise operators are used to manipulate the string in binary
+        hash &= hash;
+    }
+    return hash;// by the end of the loop, the hash is unique to this string
+}
+    // Now, when we need a particular string's hash code, we may call its hashCode method, which we just created
+    var hashedKey = "role".hashCode();
+    // console.log(hashedKey);
+
+function mod(input, div){
+    return (input % div + div) % div;
+    }
+    // console.log(hashedKey % 30);
+
+    // use the function to get the index position where we should store our data
+    var idx = mod(hashedKey, hashMap.length);
+    // console.log(idx);
+function hashLookUp(hashMap,key){
+    if(key.length < 1 || hashMap.length < 1){
+        return undefined;
+    }
+    var hashedKey = key.hashCode();
+    var index = mod(hashedKey, hashMap.length);
+    if(hashMap[index] != undefined){
+        for(var i = 0;i<hashMap[index].length;i++){
+            if(key == hashMap[index][i][0]){
+                return hashMap[index][i][1];
+            }
+        }
+    }
+    return null;
+}
+    console.log(hashLookUp(hashMap,'role'))

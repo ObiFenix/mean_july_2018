@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Counter</title>
+    </head>
+    <body>
+        <h1>Counter</h1>
+       <form action="/increment" method="post">
+           <button>+2</button>
+       </form>
+       <form action="/reset" method="post">
+           <button>Reset</button>
+       </form>
+       <h3><%=counter%> times.</h3>
+    </body>
+</html>
