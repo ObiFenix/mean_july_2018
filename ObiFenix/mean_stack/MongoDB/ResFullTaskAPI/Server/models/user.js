@@ -1,9 +1,6 @@
 const   mongoose = require('mongoose');
-        // validate = require('mongoose-validator');
 
-let Schema = mongoose.Schema;
-
-let UserSchema = new mongoose.Schema({
+const   UserSchema = new mongoose.Schema({
     first_name: {
         type: String, 
         required: [true, "First name is required."], 
@@ -13,7 +10,7 @@ let UserSchema = new mongoose.Schema({
     last_name: {
         type: String, 
         required: [true, "Last name is required."], 
-        minlength: [2, "Last name ispii too short."], 
+        minlength: [2, "Last name is too short."], 
         maxlength: [25, "Last name is too long."]},
 
     email: {
@@ -43,11 +40,7 @@ let UserSchema = new mongoose.Schema({
         }}
     }, { timestamps: true });
 
-
-// Connects to mongo db
-mongoose.connect('mongodb://localhost/users_db');
-mongoose.model('User', UserSchema);
-let User = mongoose.model('User');
-
 // export User model for use in other files.
-module.exports = User;
+mongoose.model('User', UserSchema);
+const UserModel = mongoose.model('User');
+module.exports = UserModel;
